@@ -116,8 +116,48 @@ function init () {
       $('#screenshot-btn').click(function() {
         downloadScreenshot();
       });
+
+      canvas[0].addEventListener('touchstart', function (e) {
+        brush.down = true;
+
+        currentStroke = {
+            color: brush.eraser ? '#EBECF0' : brush.color,
+            size: brush.size,
+            points: [],
+        };
+
+        strokes.push(currentStroke);
+
+        touchEvent(e);
+    });
+
+    canvas[0].addEventListener('touchend', function (e) {
+        brush.down = false;
+
+        touchEvent(e);
+
+        currentStroke = null;
+    });
+
+    canvas[0].addEventListener('touchmove', function (e) {
+        if (brush.down)
+            touchEvent(e);
+    });
     
 
+}
+
+
+function touchEvent(e) {
+    brush.x = e.touches[0].pageX;
+    brush.y = e.touches[0].pageY;
+
+    currentStroke.points.push({
+        x: brush.x,
+        y: brush.y,
+    });
+
+    redraw();
 }
 
 function updateColorOpacity(color, opacity) {
