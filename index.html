@@ -2,14 +2,25 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Draw</title>
+        <title>Paint</title>
         <link rel="stylesheet" href="paint.css">
+        <link rel="icon" href="lw_logo.png" type="image/x-icon">
+
     </head>
     <body>
-        <div class="top-bar">
+
+          <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/ylw311" aria-label="Follow @ylw311 on GitHub" >@ylw311</a>
+    
+
+
+        <div class="top-bar" >
+            
             <div class="row-2">
+                
                 <h1>Signature to PNG</h1>
                 <h4>Sign and save it as png (with transparent background) to use elsewhere (e.g. google docs) </h4>
+ 
 
                       </div>
             <div class="row-1">
@@ -26,11 +37,16 @@
                 <input type="range" id="opacity-slider" min="0" max="1" step="0.1" value="1">
                 <input type="color" id="color-picker">
                 <input type="range" id="brush-size" min="1" max="50" value="10">
+            
             </div>
+
+        
         </div>
 
+            
 
         <canvas id="draw"></canvas>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
    
   <script src="paint.js"></script>
