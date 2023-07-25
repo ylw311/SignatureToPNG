@@ -2,19 +2,328 @@ body {
     margin: 0;
 }
 
+.top-bar * {
+    margin: 5px 10px;
+}
+
+
 .top-bar {
     display: flex;
-    flex-direction: row;
-    background-color: #3af;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     border-bottom: 2px solid black;
     position: absolute;
     width: 100%;
 }
 
-.top-bar * {
-    margin: 5px 10px;
+.row-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Styles for the second row */
+.row-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px; /* Add some margin between the rows */
 }
 
 #draw {
     display: block;
+} 
+
+/* Variable values */
+:root {
+    --ruler: 16px;
+    --color-red: #AE1100;
+    --color-bg: #EBECF0;
+    --color-shadow: #BABECC;
+    --color-white: #FFF;
+  }
+  
+  /* General styles */
+  body, html {
+    background-color: var(--color-bg);
+  }
+  
+  body, p, select, textarea, button {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.2px;
+    font-size: var(--ruler);
+  }
+  
+  div, p {
+    color: var(--color-shadow);
+    text-shadow: 1px 1px 1px var(--color-white);
+  }
+  
+  form {
+    padding: var(--ruler);
+    width: calc(var(--ruler) * 20);
+    margin: 0 auto;
+  }
+  
+  .segment {
+    padding: calc(var(--ruler) * 2) 0;
+    text-align: center;
+  }
+  
+  /* Buttons and Inputs */
+  button {
+    border: 0;
+    outline: 0;
+    font-size: var(--ruler);
+    border-radius: calc(var(--ruler) * 20);
+    padding: var(--ruler);
+    background-color: var(--color-bg);
+    text-shadow: 1px 1px 0 var(--color-white);
+  }
+  
+  label {
+    display: block;
+    margin-bottom: calc(var(--ruler) * 1.5);
+    width: 100%;
+  }
+  
+  /* input {
+    margin-right: calc(var(--ruler) / 2);
+    box-shadow: inset 2px 2px 5px var(--color-shadow), inset -5px -5px 10px var(--color-white);
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+    appearance: none;
+    -webkit-appearance: none;
+  } */
+  
+  /* input:focus {
+    box-shadow: inset 1px 1px 2px var(--color-shadow), inset -1px -1px 2px var(--color-white);
+  }
+   */
+  /* Buttons */
+  button {
+    color: #61677C;
+    font-weight: bold;
+    box-shadow: -5px -5px 20px var(--color-white), 5px 5px 20px var(--color-shadow);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  button:hover {
+    box-shadow: -2px -2px 5px var(--color-white), 2px 2px 5px var(--color-shadow);
+  }
+  
+  button:active {
+    box-shadow: inset 1px 1px 2px var(--color-shadow), inset -1px -1px 2px var(--color-white);
+  }
+  
+  /* Button Icon Styles */
+  button .icon {
+    margin-right: calc(var(--ruler) / 2);
+  }
+  
+  button.unit {
+    border-radius: calc(var(--ruler) / 2);
+    line-height: 0;
+    width: calc(var(--ruler) * 3);
+    height: calc(var(--ruler) * 3);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 calc(var(--ruler) / 2);
+    font-size: calc(var(--ruler) * 1.2);
+    color: var(--color-red);
+  }
+  
+  button.red {
+    display: block;
+    width: 100%;
+    color: var(--color-red);
+  }
+  
+  /* Input Group Styles */
+  /* .input-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .input-group label {
+    margin: 0;
+    flex: 1;
+  } */
+  
+
+ 
+  
+
+  .row {
+    display: table-row;
+  }
+  .toggle-button-cover {
+    display: table-cell;
+    position: relative;
+    width: 200px;
+    height: 140px;
+  } 
+/*   
+  .button-cover {
+    height: 100px;
+    margin: 20px;
+    background-color: #fff;
+    box-shadow: 0 10px 20px -8px #c5d6d6;
+    border-radius: 4px;
+  } */
+  
+  .button-cover:before {
+    counter-increment: button-counter;
+    content: counter(button-counter);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #d7e3e3;
+    font-size: 12px;
+    line-height: 1;
+    padding: 5px;
+  } */
+  
+  .button-cover,
+  .knobs,
+  .layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .button {
+    position: relative;
+    top: 50%;
+    width: 74px;
+    height: 36px;
+    margin: -20px auto 0 auto;
+    overflow: hidden;
+  }
+  
+  .button.r,
+  .button.r .layer {
+    border-radius: 100px;
+  }
+  
+  .button.b2 {
+    border-radius: 2px;
+  }
+  
+  .checkbox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+  }
+  
+  .knobs {
+    z-index: 2;
+  }
+  
+  .layer {
+    width: 100%;
+    background-color: #ebf7fc;
+    transition: 0.3s ease all;
+    z-index: 1;
+  }
+  
+  
+ 
+/* Button 11 */
+#button-11 {
+    overflow: visible;
+  }
+  
+  #button-11 .knobs {
+    perspective: 70px;
+  }
+  
+  #button-11 .knobs:before,
+  #button-11 .knobs:after,
+  #button-11 .knobs span {
+    position: absolute;
+    top: 4px;
+    border-radius: 2px;
+  }
+  
+  #button-11 .knobs:before,
+  #button-11 .knobs:after {
+    width: 20px;
+    height: 10px;
+    color: #4e4e4e;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1;
+    padding: 9px 4px;
+  }
+  
+  #button-11 .knobs:before {
+    content: "YES";
+    left: 4px;
+  }
+  
+  #button-11 .knobs:after {
+    content: "NO";
+    right: 4px;
+  }
+  
+  #button-11 .knobs span {
+    right: 4px;
+    width: 33px;
+    height: 28px;
+    background-color: #03a9f4;
+    transform: rotateY(0);
+    transform-origin: 0% 50%;
+    transition: 0.6s ease all;
+    z-index: 1;
+  }
+  
+  #button-11 .checkbox:checked + .knobs span {
+    transform: rotateY(-180deg);
+    background-color: #f44336;
+  }
+  
+  #button-11 .checkbox:checked ~ .layer {
+    background-color: #fcebeb;
+  }
+  
+  .switch {
+    grid-column: 1 / 2;
+    display: grid;
+    grid-template-columns: repeat(2, min-content);
+    grid-gap: 3rem;
+    justify-self: center;
 }
+
+.eraser-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #4e4e4e;
+}
+
+.eraser-wrapper label {
+  margin-bottom: 5px;
+}
+
+h1 {
+  color: #4e4e4e;
+}
+
