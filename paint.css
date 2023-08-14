@@ -261,7 +261,7 @@ body {
   
 
 
-.eraser-wrapper {
+.label-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -269,7 +269,7 @@ body {
   color: #4e4e4e;
 }
 
-.eraser-wrapper label {
+.label-wrapper label {
   margin-bottom: 5px;
 }
 

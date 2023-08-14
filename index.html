@@ -30,17 +30,25 @@
                 <!-- <button type="button" id="save-btn">Save</button> -->
                 <button type="button" id="undo-btn">Undo</button>
                 <button type="button" id="clear-btn">Clear</button>
-                <div class="eraser-wrapper">
+                <div class="label-wrapper">
                     <label for="eraser-checkbox">Eraser</label>
                     <input type="checkbox" id="eraser-checkbox">
                 </div>
                 <button type="button" id="screenshot-btn">Download Screenshot</button>
             </div>
             <div class="row">
+                <div class="label-wrapper">
+                <label for="opacity-slider">Transparency</label>
                 <input type="range" id="opacity-slider" min="0" max="1" step="0.1" value="1">
+            </div>
                 <input type="color" id="color-picker">
+
+
+                <div class="label-wrapper">
+                <label for="brush-size">Brush Size</label>
+              
                 <input type="range" id="brush-size" min="1" max="50" value="10">
-            
+            </div>
             </div>
   
         </div>
