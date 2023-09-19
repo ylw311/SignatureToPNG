@@ -37,7 +37,7 @@ function init () {
 
     function mouseEvent (e) {
         brush.x = e.pageX;
-        brush.y = e.pageY;
+        brush.y = e.pageY - 25;
 
         currentStroke.points.push({
             x: brush.x,
